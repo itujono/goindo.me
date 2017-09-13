@@ -2,6 +2,10 @@ body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Avenir Regular';
 }
 
+h3 {
+  font-size: 1.17em;
+}
+
 body {
   font-size: 14px;
   line-height: 1.6;
@@ -66,6 +70,16 @@ body {
   font-size: 20px;
 }
 
+.head {
+  margin-bottom: 3em;
+}
+
+.head figure img {
+  border-radius: 7px;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .content .stats {
   margin-bottom: 20px;
 }
@@ -86,4 +100,71 @@ body {
   padding: 5px 0;
   border-radius: 5px;
   margin-right: 10px;
+}
+
+.features {
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid #ddd;
+  border-bottom: 3px solid #ddd;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.features:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.features h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.features p {
+  margin-bottom: 15px;
+}
+
+.button.is-primary {
+  border-radius: 50px;
+  background-color: #e23636;
+}
+
+.button.is-primary:hover {
+  background-color: #9c1616;
+}
+
+.tile.is-parent {
+  -webkit-flex-basis: 30%;
+  -ms-flex-preferred-size: 30%;
+  flex-basis: 30%;
+}
+
+.tile.is-ancestor {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.footer {
+  background-color: #333;
+  padding: 2rem 0 0 0;
+  color: #fff;
+}
+
+.footer .content {
+  padding: 2rem;
+}
+
+.footer .content h2 {
+  color: #59a1e0;
+}
+
+.footer .bottom-bar {
+  padding: 10px;
+  background-color: #e23636;
 }
