@@ -1,3 +1,32 @@
+@import "var.scss";
+
+
 body, h1, h2, h3, h4, h5, h6 {
     font-family: 'Avenir Regular'
+}
+
+#navigation {
+    padding: 0;
+}
+
+.topbar {
+    background-color: $red;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    h3 {
+        color: #fff;
+    }
+}
+
+.social-top {
+    li {
+        margin-right: 20px;
+        a {
+            color: #fff;
+        }
+    }
+}
+
+.hero-section {
+    min-height: 140px;
 }
