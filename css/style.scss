@@ -5,6 +5,11 @@ body, h1, h2, h3, h4, h5, h6 {
     font-family: 'Avenir Regular'
 }
 
+body {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 #navigation {
     padding: 0;
 }
@@ -29,4 +34,41 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .hero-section {
     min-height: 140px;
+}
+
+.ad-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4em;
+    min-height: 120px;
+    background-color: #ddd;
+    p {
+        color: #999;
+        font-size: 14px;
+    }
+    h4 {
+        color: #777;
+        font-size: 20px;
+    }
+}
+
+.content .stats {
+    margin-bottom: 20px;
+    p {
+        margin: 0;
+        font-size: 12px;
+        color: #bbb;
+    }
+    h5 {
+        margin: 0;
+        color: #777;
+    }
+    .level-item {
+        border: 1px solid #ddd;
+        padding: 5px 0;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
 }
