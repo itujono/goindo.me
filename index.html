@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Hello Bulma!</title>
+        <title>GoIndo.me - The Official Website</title>
         <link rel="stylesheet" href="/css/master.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -121,10 +121,12 @@
                 </nav>
             </div> <!-- kelar Container Nav -->
         </section>
+
         <section class="section" id="main-content">
             <div class="container">
                 <div class="columns">
-                    <div class="column is-two-thirds" id="main">
+
+                    <div class="column" id="main">
 
                         <div class="ad-banner">
                             <p>Banner Halaman Utama</p>
@@ -257,8 +259,37 @@
                         </div>
 
                     </div>
-                    <div class="column" id="sidebar">
-                        Auot wak!
+
+                    <div class="column is-one-quarter" id="sidebar">
+
+                        <div class="menu side-menu">
+                            <h3 class="menu-label">Menu</h3>
+                            <ul class="menu-list">
+                                <li><a href="#">Accomodation</a></li>
+                                <li><a href="#">Places to Visit</a></li>
+                                <li><a href="#">Things to Do</a></li>
+                                <li><a href="#">Eating, Drinking, &amp; Nightlife</a></li>
+                            </ul>
+                            <hr class="dark">
+                            <a href="#">Service Directory <span><i class="fa fa-angle-right"></i></span></a>
+                        </div>
+
+                        <div class="ad-banner mb2em">
+                            <p>Banner Halaman Utama</p>
+                            <h4>Place your ads here.</h4>
+                        </div>
+
+                        <div class="maps" id="maps"></div>
+
+                        <div class="ad-banner mb2em purple">
+                            <p>Banner Halaman Utama</p>
+                            <h4>Place your ads here.</h4>
+                        </div>
+                        <div class="ad-banner mb2em tosca">
+                            <p>Banner Halaman Utama</p>
+                            <h4>Place your ads here.</h4>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -277,6 +308,24 @@
         </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script>
+            function initMap() {
+                var uluru = {lat: 1.69991, lng: 103.9760852};
+                var map = new google.maps.Map(document.getElementById('maps'), {
+                  zoom: 8,
+                  center: uluru
+                });
+                var marker = new google.maps.Marker({
+                  position: uluru,
+                  map: map
+                });
+            }
+        </script>
+
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlV-4G4LxeiYHwPF9HVob_x663ySBJprU&callback=initMap">
+        </script>
 
     </body>
 </html>
