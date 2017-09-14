@@ -55,6 +55,35 @@ input[type="search"] {
     h3 {
         color: #fff;
     }
+    .language {
+        margin-right: 2em;
+        .button {
+            font-size: 14px;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+        }
+    }
+    .dropdown-item li {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+}
+
+.flag-icon-id {
+    background-image: url(../img/flags/id.svg);
+}
+
+.flag-icon-gb {
+    background-image: url(../img/flags/gb.svg);
+}
+
+.flag-icon-cn {
+    background-image: url(../img/flags/cn.svg);
 }
 
 .social-top {
@@ -68,6 +97,10 @@ input[type="search"] {
 
 .hero-section {
     min-height: 140px;
+}
+
+#main {
+    margin-bottom: 4em;
 }
 
 .ad-banner {

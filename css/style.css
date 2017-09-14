@@ -45,6 +45,39 @@ input[type="search"] {
   color: #fff;
 }
 
+.topbar .language {
+  margin-right: 2em;
+}
+
+.topbar .language .button {
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+.topbar .dropdown-item li {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.topbar .dropdown-item li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.flag-icon-id {
+  background-image: url(../img/flags/id.svg);
+}
+
+.flag-icon-gb {
+  background-image: url(../img/flags/gb.svg);
+}
+
+.flag-icon-cn {
+  background-image: url(../img/flags/cn.svg);
+}
+
 .social-top li {
   margin-right: 20px;
 }
@@ -55,6 +88,10 @@ input[type="search"] {
 
 .hero-section {
   min-height: 140px;
+}
+
+#main {
+  margin-bottom: 4em;
 }
 
 .ad-banner {
