@@ -6,6 +6,7 @@
         <title>GoIndo.me - The Official Website</title>
         <link rel="stylesheet" href="/css/master.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.css">
         <link rel="stylesheet" href="css/style.css">
@@ -18,10 +19,10 @@
                 </div>
                 <div class="level-right">
                     <ul class="level-item social-top">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li class=" wow bounceInUp"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class=" wow bounceInUp" data-wow-delay=".2s"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class=" wow bounceInUp" data-wow-delay=".4s"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li class=" wow bounceInUp" data-wow-delay=".6s"><a href="#"><i class="fa fa-pinterest"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -141,31 +142,31 @@
                                 <div class="content">
                                     <h4><strong>Kepulauan Riau</strong></h4>
                                     <div class="level stats">
-                                        <div class="level-item">
+                                        <div class="level-item wow fadeInUp">
                                             <div>
                                                 <p>Population</p>
                                                 <h5>1,500,000</h5>
                                             </div>
                                         </div>
-                                        <div class="level-item">
+                                        <div class="level-item wow fadeInUp" data-wow-delay=".2s">
                                             <div>
                                                 <p>Density</p>
                                                 <h5>521 / km2</h5>
                                             </div>
                                         </div>
-                                        <div class="level-item">
+                                        <div class="level-item wow fadeInUp" data-wow-delay=".4s">
                                             <div>
                                                 <p>Area</p>
                                                 <h5>1,801 km2</h5>
                                             </div>
                                         </div>
-                                        <div class="level-item">
+                                        <div class="level-item wow fadeInUp" data-wow-delay=".6s">
                                             <div>
                                                 <p>Capital City</p>
                                                 <h5>Tanjung Pinang</h5>
                                             </div>
                                         </div>
-                                        <div class="level-item">
+                                        <div class="level-item wow fadeInUp" data-wow-delay=".8s">
                                             <div>
                                                 <p>Largest City</p>
                                                 <h5>Batam</h5>
@@ -280,18 +281,18 @@
                             <a href="#">Service Directory <span><i class="fa fa-angle-right"></i></span></a>
                         </div>
 
-                        <div class="ad-banner mb2em">
+                        <div class="ad-banner mb2em  wow bounceInUp">
                             <p>Banner Halaman Utama</p>
                             <h4>Place your ads here.</h4>
                         </div>
 
                         <div class="maps" id="maps"></div>
 
-                        <div class="ad-banner mb2em purple">
+                        <div class="ad-banner mb2em purple wow bounceInUp">
                             <p>Banner Halaman Utama</p>
                             <h4>Place your ads here.</h4>
                         </div>
-                        <div class="ad-banner mb2em tosca">
+                        <div class="ad-banner mb2em tosca  wow bounceInUp" data-wow-delay=".2s">
                             <p>Banner Halaman Utama</p>
                             <h4>Place your ads here.</h4>
                         </div>
@@ -327,7 +328,7 @@
                 </div>
                 <div class="content has-text-centered">
                     <p>This website is owned and operated by</p>
-                    <h2 class="lbp">Little Blue Planet Indonesia</h2>
+                    <h2 class="lbp wow fadeInUp">Little Blue Planet Indonesia</h2>
                 </div>
             </div>
             <div class="bottom-bar level">
@@ -337,6 +338,9 @@
         </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+        <script>new WOW().init();</script>
 
         <script>
             function initMap() {
