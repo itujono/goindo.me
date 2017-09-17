@@ -48,7 +48,8 @@
   <div class="menu_section">
     <ul>
       <?php
-      $menus = array (array('dashboard','Dashboard','dashboard'));
+      $menus = array (array('dashboard','Dashboard','dashboard'),array('island','Island','room'),array('island/more_desc_islandlist','Description Island','more'));
+
       foreach ($menus as $values) {
         if(!empty($this->uri->segment(3))){
           $url = $this->uri->segment(3);

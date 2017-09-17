@@ -80,7 +80,7 @@ $db['default'] = array(
 	'password' => '',
 	'database' => 'goindo_me',
 	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
+	'dbprefix' => 'goindo_',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,

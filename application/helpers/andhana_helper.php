@@ -18,6 +18,10 @@ function replacesymbol($string){
     return str_replace([' ','&',',','.','(',')','!','?'], ['','','','','','','',''], $string);
 }
 
+function replacesymbolforslug($string){
+    return str_replace([' ','&',',','.','(',')','!','?'], ['-','-','-','-','-','-','-','-'], $string);
+}
+
 function dF($date, $format){
 	return date($format, strtotime($date));
 }

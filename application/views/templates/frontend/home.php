@@ -113,7 +113,19 @@
                                     </a>
                                 </div> <!-- navbar-dropdown is boxed kelar -->
                             </div>
-                            <a class="navbar-item " href="#">Provinces</a>
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link" href="#">
+                                    Provinces
+                                </a>
+                                <div class="navbar-dropdown is-boxed">
+                                <?php foreach ($listisland as $key => $value) { ?>
+                                    <a class="navbar-item " href="<?php echo base_url();?>go_island/d/<?php echo $value->idISLAND;?>/<?php echo replacesymbolforslug(strtolower($value->nameISLAND));?>">
+                                        <?php echo $value->nameISLAND;?>
+                                    </a>
+                                <?php } ?>
+                                </div> <!-- navbar-dropdown is boxed kelar -->
+                            </div>
+                            <!-- <a class="navbar-item " href="#">Provinces</a> -->
                             <a class="navbar-item " href="#">Book Now</a>
                             <a class="navbar-item " href="#">Partners</a>
                         </div> <!-- Navbar-Start -->
@@ -136,133 +148,62 @@
 
                         <div class="media head">
                             <figure class="media-left">
-                                <img src="http://unsplash.it/200x200" alt="Kepulauan Riau">
+                                <img src="<?php echo $getisland->imageISLAND;?>" alt="<?php echo $getisland->nameISLAND;?>">
                             </figure>
                             <div class="media-content">
                                 <div class="content">
-                                    <h4><strong>Kepulauan Riau</strong></h4>
+                                    <h4><strong><?php echo $getisland->nameISLAND;?></strong></h4>
                                     <div class="level stats">
                                         <div class="level-item wow fadeInUp">
                                             <div>
                                                 <p>Population</p>
-                                                <h5>1,500,000</h5>
+                                                <h5><?php echo $getisland->populationISLAND;?></h5>
                                             </div>
                                         </div>
                                         <div class="level-item wow fadeInUp" data-wow-delay=".2s">
                                             <div>
                                                 <p>Density</p>
-                                                <h5>521 / km2</h5>
+                                                <h5><?php echo $getisland->densityISLAND;?></h5>
                                             </div>
                                         </div>
                                         <div class="level-item wow fadeInUp" data-wow-delay=".4s">
                                             <div>
                                                 <p>Area</p>
-                                                <h5>1,801 km2</h5>
+                                                <h5><?php echo $getisland->areaISLAND;?></h5>
                                             </div>
                                         </div>
                                         <div class="level-item wow fadeInUp" data-wow-delay=".6s">
                                             <div>
                                                 <p>Capital City</p>
-                                                <h5>Tanjung Pinang</h5>
+                                                <h5><?php echo $getisland->capitalISLAND;?></h5>
                                             </div>
                                         </div>
                                         <div class="level-item wow fadeInUp" data-wow-delay=".8s">
                                             <div>
                                                 <p>Largest City</p>
-                                                <h5>Batam</h5>
+                                                <h5><?php echo $getisland->largestcityISLAND;?></h5>
                                             </div>
                                         </div>
                                     </div>
-                                    Comprised of over 3200 islands, Kepulauan Riau, Riau Islands, or Riau Archipelago is one of the younger and smaller Indonesia provinces; being incorporated as the 32nd province in September 2002. It is an attractive destination for tourists and travellers with the wide range of choices of accomodations, food and touring, recreation and entertainment facilities and welcoming people. Just a quick 40 minute ferry trip from Singapore, the two main islands of Bintan and Batam offer tourists a wide range of activities...
+                                    <?php echo $getisland->descISLAND;?>
                                 </div> <!-- kelar Content -->
                             </div> <!-- kelar Media-Content -->
                         </div>
 
                         <div class="tile is-ancestor">
+                        <?php
+                            if(!empty($moreisland)){
+                                foreach ($moreisland as $key => $more) {
+                        ?>
                             <div class="tile is-parent">
                                 <article class="tile is-child features">
-                                    <h3>Key Features</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array of restaurants, cafes...</p>
+                                    <h3><?php echo $more->titleDESC;?></h3>
+                                    <p><?php echo $more->moreDESC;?></p>
                                     <a href="#" class="button is-primary">Read more</a>
                                 </article>
                             </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>How to Get There</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array of restaurants, cafes...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>Things to Do</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array of restaurants, cafes...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>Places to Stay</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array of restaurants, cafes...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>Things to Eat</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array of restaurants, cafes...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>Places to Go</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array of restaurants, cafes...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>Touring</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array of restaurants, cafes...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>Climate</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array of restaurants, cafes...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>Economy</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array of restaurants, cafes...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>Language</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array of restaurants, cafes...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>Religion &amp; Culture</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains, a vast array...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3>History</h3>
-                                    <p>Kepulauan Riau is a highly attractive place for tourists and other travellers. On the main islands of Bintan and Batam, there is a wealth of excellent hotels and resorts, shopping malls full of bargains...</p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
-                            </div>
+                                <?php } ?>
+                            <?php } ?>
                         </div>
 
                     </div>

@@ -45,7 +45,9 @@ class Login extends CI_Controller {
 			} elseif($this->User_m->login($email, $pass) == "USER"){
 
 				$data = array(
+					'title' => 'Welcome!',
 		            'text' => 'Hallo, Selamat datang '. $this->session->userdata('Email').' !',
+		            'type' => 'success'
 		        );
 		        
 		        $this->session->set_flashdata('message',$data);
@@ -53,7 +55,9 @@ class Login extends CI_Controller {
 
 			}  else {
 				$data = array(
-			  		'text' => 'email atau kata sandi yang anda masukkan salah'
+					'title' => 'Warning!',
+			  		'text' => 'email atau kata sandi yang anda masukkan salah',
+			  		'type' => 'danger'
 			    );
 		 	 	$this->session->set_flashdata('message',$data);
 				redirect('login');
@@ -61,7 +65,9 @@ class Login extends CI_Controller {
 			
 		} else {
 			$data = array(
-	            'text' => 'Silakan ulangi email anda kata sandi anda dibawah!'
+				'title' => 'Warning!',
+	            'text' => 'Silakan ulangi email anda kata sandi anda dibawah!',
+	            'type' => 'danger'
         	);
 	        $this->session->set_flashdata('message',$data);
 			$this->index();

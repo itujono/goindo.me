@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Go_island extends CI_Controller {
 
 	public function __construct (){
 		parent::__construct();
@@ -9,9 +9,8 @@ class Home extends CI_Controller {
 		$this->load->model('More_island_m');
 	}
 
-	public function index() {
+	public function d($id=NULL) {
 		$data['listisland'] = $this->Island_m->selectall_island()->result();
-		$id = 1;
 		$data['getisland'] = $this->Island_m->selectall_island($id)->row();
 		$map = directory_map('assets/upload/island/pic-island-'.replacesymbolforslug($data['getisland']->nameISLAND), FALSE, TRUE);
 		
