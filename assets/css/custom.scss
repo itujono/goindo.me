@@ -68,6 +68,13 @@ body {
 
 .navbar.is-light {
     background-color: transparent;
+    .navbar-burger {
+        background-color: $red;
+        border: none;
+        span {
+            background-color: #fff;
+        }
+    }
 }
 
 #nav-menu {
@@ -113,6 +120,9 @@ body {
         margin-left: -1.25rem;
         margin-right: -1.25rem;
         margin-top: -0.75rem;
+        &:last-child {
+            margin-bottom: -1.25rem;
+        }
     }
 }
 
@@ -169,6 +179,13 @@ body {
 
 .footer {
     background-color: #a71a1a;
+    .site-links {
+        margin-bottom: 3rem;
+        li {
+            margin-bottom: 5px;
+        }
+    }
+
 }
 
 

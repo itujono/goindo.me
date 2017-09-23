@@ -43,7 +43,13 @@
             </div>
             <div class="container">
                 <nav class="navbar is-light">
-
+                    <div class="navbar-brand">
+                        <button class="button navbar-burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
                     <div class="navbar-menu" id="nav-menu">
                         <div class="navbar-start">
                             <div class="navbar-item has-dropdown is-hoverable">

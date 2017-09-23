@@ -55,6 +55,15 @@ body {
   background-color: transparent;
 }
 
+.navbar.is-light .navbar-burger {
+  background-color: #e23636;
+  border: none;
+}
+
+.navbar.is-light .navbar-burger span {
+  background-color: #fff;
+}
+
 #nav-menu .navbar-start {
   margin: 0 auto;
   border: 1px solid #e23636;
@@ -106,6 +115,10 @@ body {
   margin-left: -1.25rem;
   margin-right: -1.25rem;
   margin-top: -0.75rem;
+}
+
+#main-content .columns:last-child {
+  margin-bottom: -1.25rem;
 }
 
 #main {
@@ -161,6 +174,14 @@ body {
 
 .footer {
   background-color: #a71a1a;
+}
+
+.footer .site-links {
+  margin-bottom: 3rem;
+}
+
+.footer .site-links li {
+  margin-bottom: 5px;
 }
 
 @media screen and (max-width: 414px) {
