@@ -10,21 +10,24 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.css">
         <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom.css">
     </head>
     <body>
         <section class="section" id="navigation">
-            <div class="topbar level">
-                <div class="level-left">
-                    <h3 class="level-item">Explore Indonesia...</h3>
-                    <input type="search" value="" placeholder="Search everything..." class="level-item input">
-                </div>
-                <div class="level-right">
-                    <ul class="level-item social-top">
-                        <li class=" wow bounceInUp"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class=" wow bounceInUp" data-wow-delay=".2s"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class=" wow bounceInUp" data-wow-delay=".4s"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li class=" wow bounceInUp" data-wow-delay=".6s"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                    </ul>
+            <div class="topbar">
+                <div class="container level">
+                    <div class="level-left">
+                        <h3 class="level-item">Explore Indonesia...</h3>
+                        <input type="search" value="" placeholder="Explore..." class="level-item input">
+                    </div>
+                    <div class="level-right">
+                        <ul class="level-item social-top">
+                            <li class=" wow bounceInUp"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class=" wow bounceInUp" data-wow-delay=".2s"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class=" wow bounceInUp" data-wow-delay=".4s"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li class=" wow bounceInUp" data-wow-delay=".6s"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="container">
@@ -41,7 +44,7 @@
             <div class="container">
                 <nav class="navbar is-light">
 
-                    <div class="navbar-menu" id="navMenuTransparentExample">
+                    <div class="navbar-menu" id="nav-menu">
                         <div class="navbar-start">
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link is-active" href="#">
@@ -135,7 +138,7 @@
             </div> <!-- kelar Container Nav -->
         </section>
 
-        <section class="section" id="main-content">
+        <section class="section pb0" id="main-content">
             <div class="container">
                 <div class="columns">
 

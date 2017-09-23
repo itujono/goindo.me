@@ -1,0 +1,89 @@
+@import "var.scss";
+
+
+
+
+.pb0 {
+    padding-bottom: 0;
+}
+
+.button {
+    font-size: 1em;
+}
+
+.head figure img {
+    border-radius: 0;
+}
+
+
+
+
+
+.topbar {
+    padding: 10px 0;
+}
+
+.social-top {
+    li {
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+#nav-menu {
+    .navbar-start {
+        margin: 0 auto;
+    }
+    .navbar-item.has-dropdown {
+        padding: 0;
+    }
+    .navbar-item, .navbar-link {
+        color: #4a4a4a;
+        display: block;
+        line-height: 4;
+        padding: 0.5rem 2rem;
+        position: relative;
+    }
+    .navbar-link {
+        padding-right: 3.4em;
+        &:after {
+            right: 1.8em;
+        }
+    }
+}
+
+
+#main {
+    margin-bottom: 4em;
+    padding: 0;
+    padding-left: 0.75rem;
+}
+
+.input {
+    height: 1.8em;
+    &:focus {
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.ad-banner {
+    border-top: 3px solid $darkBlue;
+}
+
+#sidebar {
+    padding: 10px;
+    background-color: $darkBlue;
+}
+
+#sidebar .ad-banner, .ad-banner {
+    border-radius: 0;
+    background-color: $red;
+    p {
+        color: $grey;
+    }
+    h4 {
+        color: #eee;
+    }
+}
