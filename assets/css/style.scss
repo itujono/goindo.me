@@ -28,8 +28,12 @@ hr.dark {
 
 input[type="search"] {
     min-width: 260px;
+    height: 1.8em;
 }
 
+.input:focus {
+    border-color: none;
+}
 
 
 // helper classes
@@ -50,7 +54,7 @@ input[type="search"] {
 
 .topbar {
     background-color: $red;
-    padding: 5px 15px;
+    padding: 10px 15px;
     margin-bottom: 10px;
     h3 {
         color: #fff;
@@ -104,10 +108,6 @@ input[type="search"] {
         color: #777;
         font-size: 20px;
     }
-}
-
-#sidebar .ad-banner {
-    border-radius: 7px;
 }
 
 .head {

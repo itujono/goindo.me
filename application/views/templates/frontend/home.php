@@ -16,6 +16,7 @@
             <div class="topbar level">
                 <div class="level-left">
                     <h3 class="level-item">Explore Indonesia...</h3>
+                    <input type="search" value="" placeholder="Search everything..." class="level-item input">
                 </div>
                 <div class="level-right">
                     <ul class="level-item social-top">
@@ -34,7 +35,6 @@
                         </div>
                     </div>
                     <div class="level-right control">
-                        <input type="search" value="" placeholder="Search everything..." class="level-item input">
                     </div>
                 </div>
             </div>
@@ -303,4 +303,3 @@
 
     </body>
 </html>
-
