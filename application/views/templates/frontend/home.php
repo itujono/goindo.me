@@ -121,167 +121,168 @@
                                     Provinces
                                 </a>
                                 <div class="navbar-dropdown is-boxed">
-                                <?php foreach ($listprovince as $key => $value) { ?>
-                                    <a class="navbar-item " href="<?php echo base_url();?>go_island/d/<?php echo $value->idPROVINCE;?>/<?php echo replacesymbolforslug(strtolower($value->namePROVINCE));?>">
-                                        <?php echo $value->namePROVINCE;?>
-                                    </a>
-                                <?php } ?>
-                                </div> <!-- navbar-dropdown is boxed kelar -->
-                            </div>
-                            <!-- <a class="navbar-item " href="#">Provinces</a> -->
-                            <a class="navbar-item " href="#">Book Now</a>
-                            <a class="navbar-item " href="#">Partners</a>
-                        </div> <!-- Navbar-Start -->
-                    </div>
+                                    <?php foreach ($listprovince as $key => $value) { ?>
+                                        <a class="navbar-item " href="<?php echo base_url();?>go_island/d/<?php echo $value->idPROVINCE;?>/<?php echo replacesymbolforslug(strtolower($value->namePROVINCE));?>">
+                                            <?php echo $value->namePROVINCE;?>
+                                        </a>
+                                        <?php } ?>
+                                    </div> <!-- navbar-dropdown is boxed kelar -->
+                                </div>
+                                <!-- <a class="navbar-item " href="#">Provinces</a> -->
+                                <a class="navbar-item " href="#">Book Now</a>
+                                <a class="navbar-item " href="#">Partners</a>
+                            </div> <!-- Navbar-Start -->
+                        </div>
 
-                </nav>
-            </div> <!-- kelar Container Nav -->
-        </section>
+                    </nav>
+                </div> <!-- kelar Container Nav -->
+            </section>
 
         <section class="section pb0" id="main-content">
-            <div class="container">
-                <div class="columns">
+                <div class="container">
+                    <div class="columns">
 
-                    <div class="column" id="main">
+                        <div class="column" id="main">
 
-                        <div class="ad-banner">
-                            <p>Banner Halaman Utama</p>
-                            <h4>Place your ads here.</h4>
-                        </div>
-
-                        <div class="media head">
-                            <figure class="media-left">
-                                <img src="<?php echo $getprovince->imagePROVINCE;?>" alt="<?php echo $getprovince->namePROVINCE;?>">
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h4><strong><?php echo $getprovince->namePROVINCE;?></strong></h4>
-                                    <!-- <div class="level stats">
-                                        <div class="level-item wow fadeInUp">
-                                            <div>
-                                                <p>Population</p>
-                                                <h5><?php echo $getprovince->populationPROVINCE;?></h5>
-                                            </div>
-                                        </div>
-                                        <div class="level-item wow fadeInUp" data-wow-delay=".2s">
-                                            <div>
-                                                <p>Density</p>
-                                                <h5><?php echo $getprovince->densityPROVINCE;?></h5>
-                                            </div>
-                                        </div>
-                                        <div class="level-item wow fadeInUp" data-wow-delay=".4s">
-                                            <div>
-                                                <p>Area</p>
-                                                <h5><?php echo $getprovince->areaPROVINCE;?></h5>
-                                            </div>
-                                        </div>
-                                        <div class="level-item wow fadeInUp" data-wow-delay=".6s">
-                                            <div>
-                                                <p>Capital City</p>
-                                                <h5><?php echo $getprovince->capitalPROVINCE;?></h5>
-                                            </div>
-                                        </div>
-                                        <div class="level-item wow fadeInUp" data-wow-delay=".8s">
-                                            <div>
-                                                <p>Largest City</p>
-                                                <h5><?php echo $getprovince->largestcityPROVINCE;?></h5>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <?php echo $getprovince->descPROVINCE;?>
-                                </div> <!-- kelar Content -->
-                            </div> <!-- kelar Media-Content -->
-                        </div>
-
-                        <div class="tile is-ancestor">
-                        <?php
-                            if(!empty($moreprovince)){
-                                foreach ($moreprovince as $key => $more) {
-                        ?>
-                            <div class="tile is-parent">
-                                <article class="tile is-child features">
-                                    <h3><?php echo $more->titleDESC;?></h3>
-                                    <p><?php echo $more->moreDESC;?></p>
-                                    <a href="#" class="button is-primary">Read more</a>
-                                </article>
+                            <div class="ad-banner">
+                                <p>Banner Halaman Utama</p>
+                                <h4>Place your ads here.</h4>
                             </div>
-                                <?php } ?>
-                            <?php } ?>
+
+                            <div class="media head">
+                                <figure class="media-left">
+                                    <img src="<?php echo $getprovince->imagePROVINCE;?>" alt="<?php echo $getprovince->namePROVINCE;?>">
+                                </figure>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <h4><strong><?php echo $getprovince->namePROVINCE;?></strong></h4>
+                                        <!-- <div class="level stats">
+                                        <div class="level-item wow fadeInUp">
+                                        <div>
+                                        <p>Population</p>
+                                        <h5><?php echo $getprovince->populationPROVINCE;?></h5>
+                                    </div>
+                                </div>
+                                <div class="level-item wow fadeInUp" data-wow-delay=".2s">
+                                <div>
+                                <p>Density</p>
+                                <h5><?php echo $getprovince->densityPROVINCE;?></h5>
+                            </div>
                         </div>
-
-                    </div>
-
-                    <div class="column is-one-quarter" id="sidebar">
-
-                        <div class="menu side-menu">
-                            <h3 class="menu-label">Menu</h3>
-                            <ul class="menu-list">
-                                <li><a href="#">Accomodation</a></li>
-                                <li><a href="#">Places to Visit</a></li>
-                                <li><a href="#">Things to Do</a></li>
-                                <li><a href="#">Eating, Drinking, &amp; Nightlife</a></li>
-                            </ul>
-                            <hr class="dark">
-                            <a href="#">Service Directory <span><i class="fa fa-angle-right"></i></span></a>
-                        </div>
-
-                        <div class="ad-banner mb2em  wow bounceInUp">
-                            <p>Banner Halaman Utama</p>
-                            <h4>Place your ads here.</h4>
-                        </div>
-
-                        <div class="maps" id="maps"></div>
-
-                        <div class="ad-banner mb2em purple wow bounceInUp">
-                            <p>Banner Halaman Utama</p>
-                            <h4>Place your ads here.</h4>
-                        </div>
-                        <div class="ad-banner mb2em tosca  wow bounceInUp" data-wow-delay=".2s">
-                            <p>Banner Halaman Utama</p>
-                            <h4>Place your ads here.</h4>
-                        </div>
-
+                        <div class="level-item wow fadeInUp" data-wow-delay=".4s">
+                        <div>
+                        <p>Area</p>
+                        <h5><?php echo $getprovince->areaPROVINCE;?></h5>
                     </div>
                 </div>
+                <div class="level-item wow fadeInUp" data-wow-delay=".6s">
+                <div>
+                <p>Capital City</p>
+                <h5><?php echo $getprovince->capitalPROVINCE;?></h5>
             </div>
-        </section>
+        </div>
+        <div class="level-item wow fadeInUp" data-wow-delay=".8s">
+        <div>
+        <p>Largest City</p>
+        <h5><?php echo $getprovince->largestcityPROVINCE;?></h5>
+    </div>
+</div>
+</div> -->
+<?php echo $getprovince->descPROVINCE;?>
+</div> <!-- kelar Content -->
+</div> <!-- kelar Media-Content -->
+</div>
+
+<div class="tile is-ancestor">
+<?php
+if(!empty($moreprovince)){
+    foreach ($moreprovince as $key => $more) {
+        ?>
+        <div class="tile is-parent">
+            <article class="tile is-child features">
+                <h3><?php echo $more->titleDESC;?></h3>
+                <p><?php echo $more->moreDESC;?></p>
+                <a href="#" class="button is-primary">Read more</a>
+            </article>
+        </div>
+        <?php } ?>
+        <?php } ?>
+    </div>
+
+</div>
+
+<div class="column is-one-quarter" id="sidebar">
+
+    <div class="menu side-menu">
+        <h3 class="menu-label">Menu</h3>
+        <ul class="menu-list">
+            <li><a href="#">Accomodation</a></li>
+            <li><a href="#">Places to Visit</a></li>
+            <li><a href="#">Things to Do</a></li>
+            <li><a href="#">Eating, Drinking, &amp; Nightlife</a></li>
+        </ul>
+        <hr class="dark">
+        <a href="#">Service Directory <span><i class="fa fa-angle-right"></i></span></a>
+    </div>
+
+    <div class="ad-banner mb2em  wow bounceInUp">
+        <p>Banner Halaman Utama</p>
+        <h4>Place your ads here.</h4>
+    </div>
+
+    <div class="maps" id="maps"></div>
+
+    <div class="ad-banner mb2em purple wow bounceInUp">
+        <p>Banner Halaman Utama</p>
+        <h4>Place your ads here.</h4>
+    </div>
+    <div class="ad-banner mb2em tosca  wow bounceInUp" data-wow-delay=".2s">
+        <p>Banner Halaman Utama</p>
+        <h4>Place your ads here.</h4>
+    </div>
+
+</div>
+</div>
+</div>
+</section>
+
         <footer class="footer">
-            <div class="container is-transparent">
-                <div class="level site-links">
-                    <div class="level-item">
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About PT Little Blue Planet Indonesia</a></li>
-                            <li><a href="#">User Login</a></li>
-                        </ul>
-                    </div>
-                    <div class="level-item">
-                        <ul>
-                            <li><a href="#">Advertise with Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Visit Our Blog</a></li>
-                        </ul>
-                    </div>
-                    <div class="level-item">
-                        <ul>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Disclaimer</a></li>
-                            <li><a href="#">Site Content Attributions</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="content has-text-centered">
-                    <p>This website is owned and operated by</p>
-                    <h2 class="lbp wow fadeInUp">Little Blue Planet Indonesia</h2>
-                </div>
-            </div>
-            <div class="bottom-bar">
-                <div class="container is-transparent level p0">
-                    <p class="level-left">&copy; 2017 PT Little Blue Planet Indonesia - All rights reserved.</p>
-                    <p class="level-right">Last updated: 20:05 WIB 09/09/2017</p>
-                </div>
-            </div>
-        </footer>
+<div class="container is-transparent">
+    <div class="level site-links">
+        <div class="level-item">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">About PT Little Blue Planet Indonesia</a></li>
+                <li><a href="#">User Login</a></li>
+            </ul>
+        </div>
+        <div class="level-item">
+            <ul>
+                <li><a href="#">Advertise with Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Visit Our Blog</a></li>
+            </ul>
+        </div>
+        <div class="level-item">
+            <ul>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Disclaimer</a></li>
+                <li><a href="#">Site Content Attributions</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- <div class="content has-text-centered">
+    <p>This website is owned and operated by</p>
+    <h2 class="lbp wow fadeInUp">Little Blue Planet Indonesia</h2>
+</div> -->
+</div>
+<div class="bottom-bar">
+<div class="container is-transparent level p0">
+    <p class="level-left">&copy; 2017 PT Little Blue Planet Indonesia - All rights reserved.</p>
+    <p class="level-right">Last updated: 20:05 WIB 09/09/2017</p>
+</div>
+</div>
+</footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
