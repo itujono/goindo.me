@@ -48,7 +48,7 @@
   <div class="menu_section">
     <ul>
       <?php
-      $menus = array (array('dashboard','Dashboard','dashboard'),array('island','Island','room'),array('island/more_desc_islandlist','Description Island','more'));
+      $menus = array (array('dashboard','Dashboard','dashboard'),array('province','Province','room'),array('city','City','location_city'),array('province/more_desc_provincelist','Description Province','more'));
 
       foreach ($menus as $values) {
         if(!empty($this->uri->segment(3))){

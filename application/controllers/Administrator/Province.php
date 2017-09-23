@@ -1,39 +1,39 @@
 <?php
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Island extends CI_Controller{
+class Province extends CI_Controller{
 
 	public function __construct (){
 		parent::__construct();
-		$this->load->model('Island_m');
-		$this->load->model('More_island_m');
+		$this->load->model('Province_m');
+		$this->load->model('More_province_m');
 	}
 
 	public function index (){
-		$this->islandlist();
+		$this->provincelist();
 	}
 
-	public function islandlist($id = NULL){
+	public function provincelist($id = NULL){
 		$data['addONS'] = 'plugins_datatables';
 		$id = decode(urldecode($id));
 
-		$data['listisland'] = $this->Island_m->selectall_island()->result();
+		$data['listprovince'] = $this->Province_m->selectall_province()->result();
 
-		foreach ($data['listisland'] as $key => $value) {
-			$map = directory_map('assets/upload/island/pic-island-'.replacesymbolforslug($data['listisland'][$key]->nameISLAND), FALSE, TRUE);
+		foreach ($data['listprovince'] as $key => $value) {
+			$map = directory_map('assets/upload/province/pic-province-'.replacesymbolforslug($data['listprovince'][$key]->namePROVINCE), FALSE, TRUE);
 			
 			if (empty($map)) {
-				$data['listisland'][$key]->imageISLAND = base_url() . 'assets/upload/no-image-available.png';
+				$data['listprovince'][$key]->imagePROVINCE = base_url() . 'assets/upload/no-image-available.png';
 			} else {
-				$data['listisland'][$key]->imageISLAND = base_url() . 'assets/upload/island/pic-island-'.replacesymbolforslug($data['listisland'][$key]->nameISLAND).'/'.$map[0];
+				$data['listprovince'][$key]->imagePROVINCE = base_url() . 'assets/upload/province/pic-province-'.replacesymbolforslug($data['listprovince'][$key]->namePROVINCE).'/'.$map[0];
 			}
 
-			if($value->statusISLAND == 1){
+			if($value->statusPROVINCE == 1){
 				$status='<a href="#" data-uk-tooltip title="Aktif"><i class="material-icons md-36 uk-text-success">&#xE86C;</i></a>';
 			} else {
 				$status='<a href="#" data-uk-tooltip title="Tak Aktif"><i class="material-icons  md-36 uk-text-danger">&#xE5C9;</i></a>';
 			}
-			$data['listisland'][$key]->status = $status;
+			$data['listprovince'][$key]->status = $status;
 		}
 
 		if($id == NULL){
@@ -41,7 +41,7 @@ class Island extends CI_Controller{
 	            'data-tab' => 'uk-active',
 	            'form-tab' => '',
 	        );
-			$data['getisland'] = $this->Island_m->get_new();
+			$data['getprovince'] = $this->Province_m->get_new();
 		} else {
 			
 			//conf tab (optional)
@@ -49,13 +49,13 @@ class Island extends CI_Controller{
 	            'data-tab' => '',
 	            'form-tab' => 'uk-active',
 	        );
-			$data['getisland'] = $this->Island_m->selectall_island($id)->row();
-			$map = directory_map('assets/upload/island/pic-island-'.replacesymbolforslug($data['getisland']->nameISLAND), FALSE, TRUE);
+			$data['getprovince'] = $this->Province_m->selectall_province($id)->row();
+			$map = directory_map('assets/upload/province/pic-province-'.replacesymbolforslug($data['getprovince']->namePROVINCE), FALSE, TRUE);
 			
 			if (empty($map)) {
-				$data['getisland']->imageISLAND = '';
+				$data['getprovince']->imagePROVINCE = '';
 			} else {
-				$data['getisland']->imageISLAND = base_url() . 'assets/upload/island/pic-island-'.replacesymbolforslug($data['getisland']->nameISLAND).'/'.$map[0];
+				$data['getprovince']->imagePROVINCE = base_url() . 'assets/upload/province/pic-province-'.replacesymbolforslug($data['getprovince']->namePROVINCE).'/'.$map[0];
 			}
 		}
 
@@ -63,30 +63,30 @@ class Island extends CI_Controller{
             $data['message'] = $this->session->flashdata('message');
         }
 
-		$data['subview'] = $this->load->view('templates/backend/island', $data, TRUE);
+		$data['subview'] = $this->load->view('templates/backend/province', $data, TRUE);
 		$this->load->view('templates/_layout_base',$data);
 	}
 
-	public function saveisland() {
-		$rules = $this->Island_m->rules_island;
+	public function saveprovince() {
+		$rules = $this->Province_m->rules_province;
 		$this->form_validation->set_rules($rules);
 		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Island_m->array_from_post(array('nameISLAND','populationISLAND','statusISLAND','densityISLAND','areaISLAND','capitalISLAND','largestcityISLAND','descISLAND'));
-			if($data['statusISLAND'] == 'on')$data['statusISLAND']=1;
-			else $data['statusISLAND']=0;
-			$id = decode(urldecode($this->input->post('idISLAND')));
+			$data = $this->Province_m->array_from_post(array('namePROVINCE','populationPROVINCE','statusPROVINCE','densityPROVINCE','areaPROVINCE','capitalPROVINCE','largestcityPROVINCE','descPROVINCE'));
+			if($data['statusPROVINCE'] == 'on')$data['statusPROVINCE']=1;
+			else $data['statusPROVINCE']=0;
+			$id = decode(urldecode($this->input->post('idPROVINCE')));
 
 			if(empty($id))$id=NULL;
-			$subject = $this->input->post('nameISLAND');
-			$filenamesubject = 'pic-island-'.replacesymbolforslug($subject);
+			$subject = $this->input->post('namePROVINCE');
+			$filenamesubject = 'pic-province-'.replacesymbolforslug($subject);
 
 			$data = $this->security->xss_clean($data);
-			$this->Island_m->save($data, $id);
+			$this->Province_m->save($data, $id);
 
-			$path = 'assets/upload/island/'.$filenamesubject;
+			$path = 'assets/upload/province/'.$filenamesubject;
 			$map = directory_map($path, FALSE, TRUE);
 
 			if (!file_exists( $path )){
@@ -100,7 +100,7 @@ class Island extends CI_Controller{
 
 	      	$this->upload->initialize($config);
 
-	      	if ($this->upload->do_upload('imgISLAND')) {
+	      	if ($this->upload->do_upload('imgPROVINCE')) {
 
 				$data['uploads'] = $this->upload->data();
 	        	$data = array(
@@ -118,7 +118,7 @@ class Island extends CI_Controller{
 				);
       		}
 	    	$this->session->set_flashdata('message', $data);
-	  		redirect('Administrator/island');
+	  		redirect('Administrator/province');
 
 		} else {
 				$data = array(
@@ -127,7 +127,7 @@ class Island extends CI_Controller{
 		            'type' => 'warning'
 		        );
 	        $this->session->set_flashdata('message',$data);
-	        $this->islandlist();
+	        $this->provincelist();
 		}
 	}
 
@@ -136,15 +136,15 @@ class Island extends CI_Controller{
 		$ss = 0;
 		if($id2 != NULL)$ss = 1;
 		if($id != 0){
-			$data['statusISLAND'] = $ss;
-			$this->Island_m->save($data, $id);
+			$data['statusPROVINCE'] = $ss;
+			$this->Province_m->save($data, $id);
 			$data = array(
                     'title' => 'Sukses',
                     'text' => 'Perubahan Data berhasil dilakukan',
                     'type' => 'success'
                 );
                 $this->session->set_flashdata('message',$data);
-                redirect('Administrator/island');
+                redirect('Administrator/province');
 		}else{
 			$data = array(
 	            'title' => 'Terjadi Kesalahan',
@@ -152,40 +152,40 @@ class Island extends CI_Controller{
 	            'type' => 'error'
 		        );
 		        $this->session->set_flashdata('message',$data);
-		        redirect('Administrator/island');
+		        redirect('Administrator/province');
 		}
 	}
 
-	public function deleteimgisland($id1=NULL){
+	public function deleteimgprovince($id1=NULL){
 		if($id1 != NULL){
 			$id = decode(urldecode($id1));
-			$islanddata = $this->Island_m->selectall_island($id)->row();
-			$map = directory_map('assets/upload/island/pic-island-'.replacesymbolforslug($islanddata->nameISLAND), FALSE, TRUE);
-			$path = 'assets/upload/island/pic-island-'.replacesymbolforslug($islanddata->nameISLAND);
+			$provincedata = $this->Province_m->selectall_province($id)->row();
+			$map = directory_map('assets/upload/province/pic-province-'.replacesymbolforslug($provincedata->namePROVINCE), FALSE, TRUE);
+			$path = 'assets/upload/province/pic-province-'.replacesymbolforslug($provincedata->namePROVINCE);
 			foreach ($map as $value) {
-				unlink('assets/upload/island/pic-island-'.replacesymbolforslug($islanddata->nameISLAND).'/'.$value);
+				unlink('assets/upload/province/pic-province-'.replacesymbolforslug($provincedata->namePROVINCE).'/'.$value);
 			}
 			if(is_dir($path)){
 				rmdir($path);
 			}
 		}
-		redirect('Administrator/island/islandlist/'.$id1);
+		redirect('Administrator/province/provincelist/'.$id1);
 	}
 
-	public function more_desc_islandlist($id = NULL){
+	public function more_desc_provincelist($id = NULL){
 		$data['addONS'] = 'plugins_datatables';
 		$id = decode(urldecode($id));
 
-		$data['moreisland'] = $this->More_island_m->selectall_more_desc()->result();
+		$data['moreprovince'] = $this->More_province_m->selectall_more_desc()->result();
+		
+		foreach ($data['moreprovince'] as $key => $value) {
 
-		foreach ($data['moreisland'] as $key => $value) {
-
-			if($value->statusISLAND == 1){
+			if($value->statusPROVINCE == 1){
 				$status='<a href="#" data-uk-tooltip title="Aktif"><i class="material-icons md-36 uk-text-success">&#xE86C;</i></a>';
 			} else {
 				$status='<a href="#" data-uk-tooltip title="Tak Aktif"><i class="material-icons  md-36 uk-text-danger">&#xE5C9;</i></a>';
 			}
-			$data['moreisland'][$key]->status = $status;
+			$data['moreprovince'][$key]->status = $status;
 		}
 
 		if($id == NULL){
@@ -193,7 +193,7 @@ class Island extends CI_Controller{
 	            'data-tab' => 'uk-active',
 	            'form-tab' => '',
 	        );
-			$data['getmore'] = $this->More_island_m->get_new();
+			$data['getmore'] = $this->More_province_m->get_new();
 		} else {
 			
 			//conf tab (optional)
@@ -201,32 +201,32 @@ class Island extends CI_Controller{
 	            'data-tab' => '',
 	            'form-tab' => 'uk-active',
 	        );
-			$data['getmore'] = $this->More_island_m->selectall_more_desc($id)->row();
+			$data['getmore'] = $this->More_province_m->selectall_more_desc($id)->row();
 		}
 
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
         }
-        $data['getisland'] = $this->Island_m->dropdown_getisland(1);
-		$data['subview'] = $this->load->view('templates/backend/more_island', $data, TRUE);
+        $data['getprovince'] = $this->Province_m->dropdown_getprovince(1);
+		$data['subview'] = $this->load->view('templates/backend/more_province', $data, TRUE);
 		$this->load->view('templates/_layout_base',$data);
 	}
 
-	public function save_descisland() {
-		$rules = $this->More_island_m->rules_moreisland;
+	public function save_descprovince() {
+		$rules = $this->More_province_m->rules_moreprovince;
 		$this->form_validation->set_rules($rules);
 		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->More_island_m->array_from_post(array('idISLAND','titleDESC','moreDESC','statusDESC'));
+			$data = $this->More_province_m->array_from_post(array('idPROVINCE','titleDESC','moreDESC','statusDESC'));
 			if($data['statusDESC'] == 'on')$data['statusDESC']=1;
 			else $data['statusDESC']=0;
 			$id = decode(urldecode($this->input->post('idDESC')));
 			if(empty($id))$id=NULL;
 		
 			$data = $this->security->xss_clean($data);
-			$saving = $this->More_island_m->save($data, $id);
+			$saving = $this->More_province_m->save($data, $id);
 
 	      	if ($saving) {
 	        	$data = array(
@@ -243,7 +243,7 @@ class Island extends CI_Controller{
 				);
       		}
 	    	$this->session->set_flashdata('message', $data);
-	  		redirect('Administrator/island/more_desc_islandlist');
+	  		redirect('Administrator/province/more_desc_provincelist');
 
 		} else {
 				$data = array(
@@ -252,7 +252,7 @@ class Island extends CI_Controller{
 		            'type' => 'warning'
 		        );
 	        $this->session->set_flashdata('message',$data);
-	        $this->more_desc_islandlist();
+	        $this->more_desc_provincelist();
 		}
 	}
 
@@ -262,14 +262,14 @@ class Island extends CI_Controller{
 		if($id2 != NULL)$ss = 1;
 		if($id != 0){
 			$data['statusDESC'] = $ss;
-			$this->More_island_m->save($data, $id);
+			$this->More_province_m->save($data, $id);
 			$data = array(
                     'title' => 'Sukses',
                     'text' => 'Perubahan Data berhasil dilakukan',
                     'type' => 'success'
                 );
                 $this->session->set_flashdata('message',$data);
-                redirect('Administrator/island/more_desc_islandlist');
+                redirect('Administrator/province/more_desc_provincelist');
 		}else{
 			$data = array(
 	            'title' => 'Terjadi Kesalahan',
@@ -277,7 +277,7 @@ class Island extends CI_Controller{
 	            'type' => 'error'
 		        );
 		        $this->session->set_flashdata('message',$data);
-		        redirect('Administrator/island/more_desc_islandlist');
+		        redirect('Administrator/province/more_desc_provincelist');
 		}
 	}
 }

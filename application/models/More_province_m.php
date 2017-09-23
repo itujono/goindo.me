@@ -1,16 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class More_island_m extends MY_Model{
+class More_province_m extends MY_Model{
 	
 	protected $_table_name = 'goindo_more_desc';
 	protected $_order_by = 'idDESC';
 	protected $_primary_key = 'idDESC';
 
-	public $rules_moreisland = array(
-		'idISLAND' => array(
-			'field' => 'idISLAND', 
-			'label' => 'Title', 
+	public $rules_moreprovince = array(
+		'idPROVINCE' => array(
+			'field' => 'idPROVINCE', 
+			'label' => 'Province Name', 
 			'rules' => 'trim|required'
 		),
 		'titleDESC' => array(
@@ -32,7 +32,7 @@ class More_island_m extends MY_Model{
 	public function get_new(){
 		$more = new stdClass();
 		$more->idDESC = '';
-		$more->idISLAND = '';
+		$more->idPROVINCE = '';
 		$more->titleDESC = '';
 		$more->moreDESC = '';
 		$more->statusDESC = '';
@@ -41,9 +41,9 @@ class More_island_m extends MY_Model{
 
 	public function selectall_more_desc($id = NULL, $status = NULL, $id2=NULL) {
 		$this->db->select('*');
-		$this->db->select('island.*');
+		$this->db->select('province.*');
 		$this->db->from('more_desc');
-		$this->db->join('island', 'island.idISLAND = more_desc.idISLAND');
+		$this->db->join('province', 'province.idPROVINCE = more_desc.idPROVINCE');
 		if ($id != NULL) {
 			$this->db->where('more_desc.idDESC',$id);
 		}
@@ -53,7 +53,7 @@ class More_island_m extends MY_Model{
 		}
 
 		if ($id2 != NULL) {
-			$this->db->where('more_desc.idISLAND',$id2);
+			$this->db->where('more_desc.idPROVINCE',$id2);
 		}
 		
 		return $this->db->get();

@@ -118,9 +118,9 @@
                                     Provinces
                                 </a>
                                 <div class="navbar-dropdown is-boxed">
-                                <?php foreach ($listisland as $key => $value) { ?>
-                                    <a class="navbar-item " href="<?php echo base_url();?>go_island/d/<?php echo $value->idISLAND;?>/<?php echo replacesymbolforslug(strtolower($value->nameISLAND));?>">
-                                        <?php echo $value->nameISLAND;?>
+                                <?php foreach ($listprovince as $key => $value) { ?>
+                                    <a class="navbar-item " href="<?php echo base_url();?>go_island/d/<?php echo $value->idPROVINCE;?>/<?php echo replacesymbolforslug(strtolower($value->namePROVINCE));?>">
+                                        <?php echo $value->namePROVINCE;?>
                                     </a>
                                 <?php } ?>
                                 </div> <!-- navbar-dropdown is boxed kelar -->
@@ -148,52 +148,52 @@
 
                         <div class="media head">
                             <figure class="media-left">
-                                <img src="<?php echo $getisland->imageISLAND;?>" alt="<?php echo $getisland->nameISLAND;?>">
+                                <img src="<?php echo $getprovince->imagePROVINCE;?>" alt="<?php echo $getprovince->namePROVINCE;?>">
                             </figure>
                             <div class="media-content">
                                 <div class="content">
-                                    <h4><strong><?php echo $getisland->nameISLAND;?></strong></h4>
+                                    <h4><strong><?php echo $getprovince->namePROVINCE;?></strong></h4>
                                     <div class="level stats">
                                         <div class="level-item wow fadeInUp">
                                             <div>
                                                 <p>Population</p>
-                                                <h5><?php echo $getisland->populationISLAND;?></h5>
+                                                <h5><?php echo $getprovince->populationPROVINCE;?></h5>
                                             </div>
                                         </div>
                                         <div class="level-item wow fadeInUp" data-wow-delay=".2s">
                                             <div>
                                                 <p>Density</p>
-                                                <h5><?php echo $getisland->densityISLAND;?></h5>
+                                                <h5><?php echo $getprovince->densityPROVINCE;?></h5>
                                             </div>
                                         </div>
                                         <div class="level-item wow fadeInUp" data-wow-delay=".4s">
                                             <div>
                                                 <p>Area</p>
-                                                <h5><?php echo $getisland->areaISLAND;?></h5>
+                                                <h5><?php echo $getprovince->areaPROVINCE;?></h5>
                                             </div>
                                         </div>
                                         <div class="level-item wow fadeInUp" data-wow-delay=".6s">
                                             <div>
                                                 <p>Capital City</p>
-                                                <h5><?php echo $getisland->capitalISLAND;?></h5>
+                                                <h5><?php echo $getprovince->capitalPROVINCE;?></h5>
                                             </div>
                                         </div>
                                         <div class="level-item wow fadeInUp" data-wow-delay=".8s">
                                             <div>
                                                 <p>Largest City</p>
-                                                <h5><?php echo $getisland->largestcityISLAND;?></h5>
+                                                <h5><?php echo $getprovince->largestcityPROVINCE;?></h5>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php echo $getisland->descISLAND;?>
+                                    <?php echo $getprovince->descPROVINCE;?>
                                 </div> <!-- kelar Content -->
                             </div> <!-- kelar Media-Content -->
                         </div>
 
                         <div class="tile is-ancestor">
                         <?php
-                            if(!empty($moreisland)){
-                                foreach ($moreisland as $key => $more) {
+                            if(!empty($moreprovince)){
+                                foreach ($moreprovince as $key => $more) {
                         ?>
                             <div class="tile is-parent">
                                 <article class="tile is-child features">
