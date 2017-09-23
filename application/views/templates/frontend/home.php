@@ -15,7 +15,7 @@
     <body>
         <section class="section" id="navigation">
             <div class="topbar">
-                <div class="container level">
+                <div class="container level is-transparent p0">
                     <div class="level-left">
                         <h3 class="level-item">Explore Indonesia...</h3>
                         <input type="search" value="" placeholder="Explore..." class="level-item input">
@@ -34,7 +34,7 @@
                 <div class="hero-section level">
                     <div class="level-left">
                         <div class="level-item">
-                            <img src="<?php echo base_url();?>assets/img/logo-flag.png" alt="Main logo" width="180">
+                            <img src="<?php echo base_url();?>assets/img/logo-flag.png" alt="Main logo" width="260">
                         </div>
                     </div>
                     <div class="level-right control">
@@ -156,7 +156,7 @@
                             <div class="media-content">
                                 <div class="content">
                                     <h4><strong><?php echo $getprovince->namePROVINCE;?></strong></h4>
-                                    <div class="level stats">
+                                    <!-- <div class="level stats">
                                         <div class="level-item wow fadeInUp">
                                             <div>
                                                 <p>Population</p>
@@ -187,7 +187,7 @@
                                                 <h5><?php echo $getprovince->largestcityPROVINCE;?></h5>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <?php echo $getprovince->descPROVINCE;?>
                                 </div> <!-- kelar Content -->
                             </div> <!-- kelar Media-Content -->
@@ -246,7 +246,7 @@
             </div>
         </section>
         <footer class="footer">
-            <div class="container">
+            <div class="container is-transparent">
                 <div class="level site-links">
                     <div class="level-item">
                         <ul>
@@ -275,9 +275,11 @@
                     <h2 class="lbp wow fadeInUp">Little Blue Planet Indonesia</h2>
                 </div>
             </div>
-            <div class="bottom-bar level">
-                <p class="level-left">&copy; 2017 PT Little Blue Planet Indonesia - All rights reserved.</p>
-                <p class="level-right">Last updated: 20:05 WIB 09/09/2017</p>
+            <div class="bottom-bar">
+                <div class="container is-transparent level p0">
+                    <p class="level-left">&copy; 2017 PT Little Blue Planet Indonesia - All rights reserved.</p>
+                    <p class="level-right">Last updated: 20:05 WIB 09/09/2017</p>
+                </div>
             </div>
         </footer>
 

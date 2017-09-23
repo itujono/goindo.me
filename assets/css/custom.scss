@@ -3,8 +3,17 @@
 
 
 
+
+body {
+    background-color: #f9f9f9;
+}
+
 .pb0 {
     padding-bottom: 0;
+}
+
+.p0 {
+    padding: 0 !important;
 }
 
 .button {
@@ -15,12 +24,39 @@
     border-radius: 0;
 }
 
+.container {
+    padding: 20px;
+    background-color: #fff;
+}
 
+.is-transparent {
+    background-color: transparent !important;
+}
+
+
+
+
+
+.navbar.is-light .navbar-start .navbar-link::after, .navbar.is-light .navbar-end .navbar-link::after {
+    border-color: $red;
+}
 
 
 
 .topbar {
+    position: fixed;
+    z-index: 10;
+    margin: 0 auto;
     padding: 10px 0;
+    width: 100%;
+    background-color: #e23636;
+    padding: 5px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section {
+    min-height: 180px;
+    padding-top: 30px;
 }
 
 .social-top {
@@ -31,15 +67,26 @@
     }
 }
 
+.navbar.is-light {
+    background-color: transparent;
+}
+
 #nav-menu {
     .navbar-start {
         margin: 0 auto;
+        border: 1px solid $red;
     }
-    .navbar-item.has-dropdown {
-        padding: 0;
+    .navbar-item {
+        border-right: 1px solid $red;
+        &:last-child {
+            border-right: none;
+        }
+        &.has-dropdown {
+            padding: 0;
+        }
     }
     .navbar-item, .navbar-link {
-        color: #4a4a4a;
+        color: #999;
         display: block;
         line-height: 4;
         padding: 0.5rem 2rem;
@@ -47,10 +94,22 @@
     }
     .navbar-link {
         padding-right: 3.4em;
-        &:after {
-            right: 1.8em;
+        &.is-active {
+            background-color: $red;
+            color: #fff;
+            &:after {
+                right: 1.8em;
+                border-color: #fff;
+            }
         }
     }
+    .navbar-dropdown {
+        padding: 0;
+    }
+}
+
+#main-content {
+    padding-top: 0;
 }
 
 
@@ -58,6 +117,12 @@
     margin-bottom: 4em;
     padding: 0;
     padding-left: 0.75rem;
+    > div {
+        padding-right: 20px;
+    }
+    > .ad-banner {
+        padding-right: 0;
+    }
 }
 
 .input {
@@ -86,4 +151,10 @@
     h4 {
         color: #eee;
     }
+}
+
+
+
+.features {
+    border-radius: 0;
 }
