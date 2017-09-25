@@ -68,21 +68,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $province->areaPROVINCE;?></td>
                 <td><?php echo date('d F Y', strtotime($province->createdatePROVINCE));?></td>
                 <?php
-                 $id2 = '/1';
-                 $icn = '&#xE8F4;'; 
-                 $nm = 'Activate'; 
-                 if($province->statusPROVINCE == 1){
-                     $id2 = ''; 
-                     $icn = '&#xE8F5;';
-                     $nm = 'Not Activate';
-                 }
-                  $msg1 = 'Are you sure want to '.$nm.' <b>'.$province->namePROVINCE.'</b> ?';
+                 //$id2 = '/1';
+                 //$icn = '&#xE8F4;'; 
+                 //$nm = 'Activate';
+                 $icndel = '&#xE16C;';
+                 //if($province->statusPROVINCE == 1){
+                     //$id2 = ''; 
+                     //$icn = '&#xE8F5;';
+                     //$nm = 'Not Activate';
+                 //}
+                  $msg1 = 'Are you sure want to delete this data <b>'.$province->namePROVINCE.'</b> ?';
                   $msg2 = 'Are you sure want to change this data ' . ' <b>'.$province->namePROVINCE.'</b> ?';
-                  $url1 = 'Administrator/'.$controller.'/actionedit/'.urlencode($id).$id2;
+                  $url1 = 'Administrator/'.$controller.'/actiondelete/'.urlencode($id);
                   $url2 = 'Administrator/'.$controller.'/provincelist/'.urlencode($id);
                 ?>
                 <td class="uk-text-center">
-                  <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icn; ?></i></a>
+                  <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
                   <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg2; ?>', function(){ document.location.href='<?php echo site_url($url2);?>'; });"><i class="md-icon material-icons">&#xE254;</i></a>
                 </td>
               </tr>
@@ -137,35 +138,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-2 uk-margin-top">
+              <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Area</label>
                   <br>
                   <input type="text" class="md-input label-fixed" name="areaPROVINCE" autocomplete value="<?php echo $getprovince->areaPROVINCE;?>"/>
                   <p class="text-red"><?php echo form_error('areaPROVINCE'); ?></p>
               </div>
-              <div class="uk-width-medium-1-2 uk-margin-top">
+              <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Capital</label>
                   <br>
                   <input type="text" class="md-input label-fixed" name="capitalPROVINCE" autocomplete value="<?php echo $getprovince->capitalPROVINCE;?>"/>
                   <p class="text-red"><?php echo form_error('capitalPROVINCE'); ?></p>
               </div>
-            </div>
-            <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-2 uk-margin-top">
+              <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Largest City</label>
                   <br>
                   <input type="text" class="md-input label-fixed" name="largestcityPROVINCE" autocomplete value="<?php echo $getprovince->largestcityPROVINCE;?>"/>
                   <p class="text-red"><?php echo form_error('largestcityPROVINCE'); ?></p>
-              </div>
-              <div class="uk-width-medium-1-2 uk-margin-top">
-                <div class="parsley-row">
-                  <?php
-                    $checkdis= '';
-                    if($getprovince->statusPROVINCE == 1) $checkdis = 'checked' ;
-                  ?>
-                  <input type="checkbox" data-switchery <?php echo $checkdis; ?> data-switchery-size="large" data-switchery-color="#d32f2f" name="statusPROVINCE" id="switch_demo_large">
-                  <label for="switch_demo_large" class="inline-label"><b>Active Province</b></label>
-                </div>
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>

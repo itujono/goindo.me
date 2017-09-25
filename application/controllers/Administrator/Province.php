@@ -131,16 +131,13 @@ class Province extends CI_Controller{
 		}
 	}
 
-	public function actionedit($id=NULL , $id2=NULL){
+	public function actiondelete($id=NULL){
 		$id = decode(urldecode($id));
-		$ss = 0;
-		if($id2 != NULL)$ss = 1;
 		if($id != 0){
-			$data['statusPROVINCE'] = $ss;
-			$this->Province_m->save($data, $id);
+			$this->Province_m->delete($id);
 			$data = array(
                     'title' => 'Sukses',
-                    'text' => 'Perubahan Data berhasil dilakukan',
+                    'text' => 'Penghapusan Data berhasil dilakukan',
                     'type' => 'success'
                 );
                 $this->session->set_flashdata('message',$data);
@@ -148,7 +145,7 @@ class Province extends CI_Controller{
 		}else{
 			$data = array(
 	            'title' => 'Terjadi Kesalahan',
-	            'text' => 'Maaf, data tidak berhasil dirubah silakan coba beberapa saat kembali',
+	            'text' => 'Maaf, data tidak berhasil dihapus silakan coba beberapa saat kembali',
 	            'type' => 'error'
 		        );
 		        $this->session->set_flashdata('message',$data);
@@ -256,16 +253,13 @@ class Province extends CI_Controller{
 		}
 	}
 
-	public function actionedit_more($id=NULL , $id2=NULL){
+	public function actiondelete_more($id=NULL){
 		$id = decode(urldecode($id));
-		$ss = 0;
-		if($id2 != NULL)$ss = 1;
 		if($id != 0){
-			$data['statusDESC'] = $ss;
-			$this->More_province_m->save($data, $id);
+			$this->More_province_m->delete($id);
 			$data = array(
                     'title' => 'Sukses',
-                    'text' => 'Perubahan Data berhasil dilakukan',
+                    'text' => 'Penghapusan Data berhasil dilakukan',
                     'type' => 'success'
                 );
                 $this->session->set_flashdata('message',$data);
@@ -273,7 +267,7 @@ class Province extends CI_Controller{
 		}else{
 			$data = array(
 	            'title' => 'Terjadi Kesalahan',
-	            'text' => 'Maaf, data tidak berhasil dirubah silakan coba beberapa saat kembali',
+	            'text' => 'Maaf, data tidak berhasil dihapus silakan coba beberapa saat kembali',
 	            'type' => 'error'
 		        );
 		        $this->session->set_flashdata('message',$data);
