@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '123456',
-	'database' => 'goindo_me',
+	'hostname' => 'goindo.me:3306',
+	'username' => 'goindome_jos8use',
+	'password' => 'sM@5o~yO2se@',
+	'database' => 'goindome_jos8',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'goindo_',
 	'pconnect' => FALSE,
