@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$title1 = 'Create New Province Data';
-$actions = 'saveprovince';
-$controller = 'province';
-if($getprovince->idPROVINCE != NULL){
- $title1 = 'Update Province Data';
+$title1 = 'Create New Area Data';
+$actions = 'savearea';
+$controller = 'area';
+if($getarea->idAREA != NULL){
+ $title1 = 'Update Area Data';
 } 
 $url = base_url().'Administrator/'.$controller.'/'.$actions;
 ?>
@@ -23,8 +23,8 @@ $url = base_url().'Administrator/'.$controller.'/'.$actions;
   <div class="md-card">
     <div class="md-card-content">
       <ul class="uk-tab uk-tab-grid" data-uk-tab="{connect:'#tabs_4'}">
-        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Province List</a></li>
-        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Province</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Area List</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Area</a></li>
       </ul>
       <ul id="tabs_4" class="uk-switcher uk-margin">
         <li>
@@ -32,7 +32,8 @@ $url = base_url().'Administrator/'.$controller.'/'.$actions;
             <thead>
               <tr>
                 <th>No.</th>
-                <th>Province Name</th>
+                <th>City</th>
+                <th>Area Name</th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
@@ -40,37 +41,39 @@ $url = base_url().'Administrator/'.$controller.'/'.$actions;
             <tfoot>
               <tr>
                 <th>No.</th>
-                <th>Province Name</th>
+                <th>City</th>
+                <th>Area Name</th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
             </tfoot>
             <tbody>
               <?php 
-              if(!empty($listprovince)){
-                foreach ($listprovince  as $key => $province) { 
-                  $id = encode($province->idPROVINCE);
+              if(!empty($listarea)){
+                foreach ($listarea  as $key => $area) { 
+                  $id = encode($area->idAREA);
                   ?>
                   <tr>
                     <td><?php echo $key+1; ?></td>
-                    <td><?php echo $province->namePROVINCE; ?></td>
-                    <td><?php echo date('d F Y', strtotime($province->createdatePROVINCE));?></td>
+                    <td><?php echo $area->nameCITY; ?></td>
+                    <td><?php echo $area->nameAREA; ?></td>
+                    <td><?php echo date('d F Y', strtotime($area->createdateAREA));?></td>
                     <?php
                     $id2 = '/1';
                     $icn = '&#xE8F4;'; 
                     $nm = 'Activate';
                     $icndel = '&#xE16C;';
-                    if($province->statusPROVINCE == 1){
+                    if($area->statusAREA == 1){
                      $id2 = ''; 
                      $icn = '&#xE8F5;';
                      $nm = 'Deactivated';
                    }
-                   $msg1 = 'Are you sure want to delete this data <b>'.$province->namePROVINCE.'</b> ?';
-                   $msg2 = 'Are you sure want to change this data ' . ' <b>'.$province->namePROVINCE.'</b> ?';
-                   $msg3 = 'Are you sure want to '.$nm.' <b>'.addslashes($province->namePROVINCE).'</b> ?';
-                   $url1 = $this->data['folBACKEND'].$controller.'/actiondelete_province/'.urlencode($id);
-                   $url2 = $this->data['folBACKEND'].$controller.'/index_province/'.urlencode($id);
-                   $url3 = $this->data['folBACKEND'].$controller.'/actionchange_status_province/'.urlencode($id).$id2;
+                   $msg1 = 'Are you sure want to delete this data <b>'.$area->nameAREA.'</b> ?';
+                   $msg2 = 'Are you sure want to change this data ' . ' <b>'.$area->nameAREA.'</b> ?';
+                   $msg3 = 'Are you sure want to '.$nm.' <b>'.addslashes($area->nameAREA).'</b> ?';
+                   $url1 = $this->data['folBACKEND'].$controller.'/actiondelete_area/'.urlencode($id);
+                   $url2 = $this->data['folBACKEND'].$controller.'/index_area/'.urlencode($id);
+                   $url3 = $this->data['folBACKEND'].$controller.'/actionchange_status_area/'.urlencode($id).$id2;
                    ?>
                    <td class="uk-text-center">
                     <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i>
@@ -86,24 +89,31 @@ $url = base_url().'Administrator/'.$controller.'/'.$actions;
             </table>
           </li>
           <li>
-            <h3 class="heading_a uk-margin-bottom">Create or Update Province Data</h3>
+            <h3 class="heading_a uk-margin-bottom">Create or Update Area Data</h3>
             <form method="post" name="formprovince" action="<?php echo $url;?>" id="form_validation">
-              <?php echo form_hidden('idPROVINCE',encode($getprovince->idPROVINCE),'hidden'); ?>
+              <?php echo form_hidden('idAREA',encode($getarea->idAREA),'hidden'); ?>
               <div class="uk-grid" data-uk-grid-margin>
-                <div class="uk-width-medium-1-2 uk-margin-top">
-                  <label>Province Name</label>
+                <div class="uk-width-medium-1-3 uk-margin-top">
+                  <label>Area Name</label>
                   <br>
-                  <input type="text" class="md-input label-fixed" name="namePROVINCE" autocomplete value="<?php echo $getprovince->namePROVINCE;?>"/>
-                  <p class="text-red"><?php echo form_error('namePROVINCE'); ?></p>
+                  <input type="text" class="md-input label-fixed" name="nameAREA" autocomplete value="<?php echo $getarea->nameAREA;?>"/>
+                  <p class="text-red"><?php echo form_error('nameAREA'); ?></p>
                 </div>
-                <div class="uk-width-medium-1-2 uk-margin-top">
+                <div class="uk-width-medium-1-3 uk-margin-top">
+                  <label>City</label>
+                  <br>
+                  <?php echo form_dropdown('idCITY', $getcity, $getarea->idCITY,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
+                  </select>
+                  <p class="text-red"><?php echo form_error('idCITY'); ?></p>
+                </div>
+                <div class="uk-width-medium-1-3 uk-margin-top">
                   <div class="parsley-row">
                     <?php
                       $checkdis= '';
-                      if($getprovince->statusPROVINCE == 1) $checkdis = 'checked' ;
+                      if($getarea->statusAREA == 1) $checkdis = 'checked' ;
                     ?>
-                    <input type="checkbox" data-switchery <?php echo $checkdis; ?> data-switchery-size="large" data-switchery-color="#d32f2f" name="statusPROVINCE" id="switch_demo_large">
-                    <label for="switch_demo_large" class="inline-label"><b>Activate Province</b></label>
+                    <input type="checkbox" data-switchery <?php echo $checkdis; ?> data-switchery-size="large" data-switchery-color="#d32f2f" name="statusAREA" id="switch_demo_large">
+                    <label for="switch_demo_large" class="inline-label"><b>Activate Area</b></label>
                   </div>
                 </div>
               </div>

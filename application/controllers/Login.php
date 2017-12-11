@@ -40,7 +40,7 @@ class Login extends CI_Controller {
 		            'type' => 'success'
 		        );
 		        $this->session->set_flashdata('message',$data);
-				redirect('administrator/dashboard');
+				redirect('Administrator/dashboard/index_dashboard');
 
 			} elseif($this->User_m->login($email, $pass) == "USER"){
 

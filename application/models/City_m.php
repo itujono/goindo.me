@@ -8,15 +8,10 @@ class City_m extends MY_Model{
 	protected $_primary_key = 'idCITY';
 
 	public $rules_city = array(
-		'idPROVINCE' => array(
-			'field' => 'idPROVINCE', 
-			'label' => 'Province Name', 
-			'rules' => 'trim|required'
-		),
 		'nameCITY' => array(
 			'field' => 'nameCITY', 
-			'label' => 'City Name', 
-			'rules' => 'trim|required'
+			'label' => 'City Name',
+			'rules' => 'trim|required|is_unique[goindo_city.nameCITY]'
 		)
 	);
 
@@ -37,7 +32,7 @@ class City_m extends MY_Model{
 		$this->db->select('*');
 		$this->db->select('province.namePROVINCE');
 		$this->db->from('city');
-		$this->db->join('province', 'province.idPROVINCE = city.idPROVINCE');
+		$this->db->join('province', 'province.idPROVINCE = city.idPROVINCE', 'left');
 		if ($id != NULL) {
 			$this->db->where('city.idCITY',$id);
 		}
@@ -47,5 +42,19 @@ class City_m extends MY_Model{
 		}
 		
 		return $this->db->get();
+	}
+
+	public function dropdown_getcity($dropdown=NULL){
+		$this->db->cache_on();
+		$this->db->from('city');
+		if($dropdown != NULL){
+			$ddown = array();
+			foreach ($this->db->get()->result() as $value) {
+				$ddown[$value->idCITY] = $value->nameCITY;
+			}
+			return $ddown;
+		}else{
+			return $this->db->get();
+		}
 	}
 }

@@ -11,7 +11,7 @@ class Home extends CI_Controller {
 
 	public function index() {
 		$data['listprovince'] = $this->Province_m->selectall_province()->result();
-		$id = 4;
+		$id = 1;
 		$data['getprovince'] = $this->Province_m->selectall_province($id)->row();
 		$map = directory_map('assets/upload/province/pic-province-'.replacesymbolforslug($data['getprovince']->namePROVINCE), FALSE, TRUE);
 		

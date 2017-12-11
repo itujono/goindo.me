@@ -11,32 +11,7 @@ class Province_m extends MY_Model{
 		'namePROVINCE' => array(
 			'field' => 'namePROVINCE', 
 			'label' => 'Province Name', 
-			'rules' => 'trim|required'
-		),
-		'populationPROVINCE' => array(
-			'field' => 'populationPROVINCE', 
-			'label' => 'Province Population', 
-			'rules' => 'trim|required'
-		),
-		'densityPROVINCE' => array(
-			'field' => 'densityPROVINCE', 
-			'label' => 'Province Density', 
-			'rules' => 'trim|required'
-		),
-		'areaPROVINCE' => array(
-			'field' => 'areaPROVINCE', 
-			'label' => 'Province Area', 
-			'rules' => 'trim|required'
-		),
-		'capitalPROVINCE' => array(
-			'field' => 'capitalPROVINCE', 
-			'label' => 'Province Capital', 
-			'rules' => 'trim|required'
-		),
-		'largestcityPROVINCE' => array(
-			'field' => 'largestcityPROVINCE', 
-			'label' => 'Province Largest City', 
-			'rules' => 'trim|required'
+			'rules' => 'trim|required|is_unique[goindo_province.namePROVINCE]'
 		)
 	);
 
@@ -48,12 +23,6 @@ class Province_m extends MY_Model{
 		$province = new stdClass();
 		$province->idPROVINCE = '';
 		$province->namePROVINCE = '';
-		$province->populationPROVINCE = '';
-		$province->densityPROVINCE = '';
-		$province->areaPROVINCE = '';
-		$province->capitalPROVINCE = '';
-		$province->largestcityPROVINCE = '';
-		$province->descPROVINCE = '';
 		$province->statusPROVINCE = '';
 		return $province;
 	}
@@ -68,7 +37,6 @@ class Province_m extends MY_Model{
 		if ($status != NULL) {
 			$this->db->where('province.statusPROVINCE',$status);
 		}
-		
 		return $this->db->get();
 	}
 
